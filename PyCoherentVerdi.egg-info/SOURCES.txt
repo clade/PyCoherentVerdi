@@ -1,0 +1,10 @@
+setup.py
+PyCoherentVerdi/PyCoherentVerdi.py
+PyCoherentVerdi/VerdiQuery.py
+PyCoherentVerdi/__init__.py
+PyCoherentVerdi.egg-info/PKG-INFO
+PyCoherentVerdi.egg-info/SOURCES.txt
+PyCoherentVerdi.egg-info/dependency_links.txt
+PyCoherentVerdi.egg-info/top_level.txt
+PyCoherentVerdi/example/__init__.py
+PyCoherentVerdi/example/verdilogger.py

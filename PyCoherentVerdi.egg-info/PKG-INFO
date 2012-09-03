@@ -1,0 +1,56 @@
+Metadata-Version: 1.1
+Name: PyCoherentVerdi
+Version: 0.1
+Summary: Interface to Tektronix Scope
+Home-page: https://github.com/clade/PyTektronixScope
+Author: Pierre Cladé
+Author-email: pierre.clade@spectro.jussieu.fr
+License: This software can be used under one of the following two licenses: (1) The BSD license. (2) Any other license, as long as it is obtained from the original author.
+Description: Overview
+        ========
+        
+        This package can be used to drive a Verdi laser using RS232
+        
+        
+        Installation
+        ============
+        
+        
+        Usage
+        =====
+        
+        from PyCoherentVerdi import VerdiDriver
+        verdi = VerdiDriver(port='COM7')
+        print verdi.power # print the measured power
+        print verdi.set_power # print the set power
+        verdi.set_power = 15.6 # set the power to 15.6 watts 
+        
+        Contact
+        =======
+        
+        Please send bug reports or feedback to `Pierre Clade`_.
+        
+        Version history
+        ===============
+        Main changes:
+        
+        * 0.1 Initial relase
+        
+        
+        .. _Pierre Clade: mailto:pierre.clade@spectro.jussieu.fr
+        
+Keywords: Coherent,Verdi
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Other Audience
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires: pyserial

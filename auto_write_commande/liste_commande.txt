@@ -1,0 +1,51 @@
+BT; baseplate temperature; Returns the measured laser head baseplate temperature in C
+B; baud_rate; Return the baud rate of the Verdi serial port
+C; diode currents; Returns the measured diode currents in amps
+CD;delta calibration; Return the diode current delta calibration
+D1C; diode 1 current; Returns the measured laser diode 1 current in amps
+D2C; diode 2 current; Returns the measured laser diode 2 current in amps
+D1HST; diode 1 heatsink temperature; Returns the laser diode 1 heatsink temperature in C
+D2HST; diode 2 heatsink temperature; Returns the laser diode 2 heatsink temperature in C
+D1H; diode 1 operating hours; Returns the number of operating hours on the laser diode 1
+D2H; diode 2 operating hours; Returns the number of operating hours on the laser diode 2
+D1PC; diode 1 power; Returns light output power from diode 1 photocell
+D2PC; diode 2 power; Returns light output power from diode 2 photocell
+D1RCF; diode 1 aging factor; Returns the factor that accounts for diode 1 aging
+D2RCF; diode 2 aging factor; Returns the factor that accounts for diode 2 aging
+D1RCM; diode 1 maximum current; Returns the maximum current at which diode 1 will be allowed to operate
+D2RCM; diode 2 maximum current; Returns the maximum current at which diode 2 will be allowed to operate
+D1SS; diode 1 status; Returns the status of diode 1 temperature servo {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT", 4:"OPTIMIZING"}
+D2SS; diode 2 status; Returns the status of diode 2 temperature servo {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT", 4:"OPTIMIZING"}
+D1ST; diode 1 set temperature; Returns the diode 1 set temperature in C
+D2ST; diode 2 set temperature; Returns the diode 2 set temperature in C
+D1TD; diode 1 temperature servo level; Returns laser diode 1 temperature servo drive level
+D2TD; diode 2 temperature servo level; Returns laser diode 2 temperature servo drive level
+D1T; diode 1 temperature; Returns the measured laser diode 1 temperature in C
+D2T; diode 2 temperature; Returns the measured laser diode 2 temperature in C
+D15V;diode 1 ref voltage;Return a reference voltage used to measure the temperature of diode 1 
+D25V;diode 2 ref voltage;Return a reference voltage used to measure the temperature of diode 2
+DIOS; diode optimization status; Returns diode 1 optimization status {0:False, 1:True}
+ED; etalon servo level; Returns etalon temperature servo drive level
+ESS; etalon status; Returns the status of the etalon temperature servo  {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT"}
+EST; etalon set temperature; Returns etalon set temperature in C
+ET; etalon temperature; Returns the measured Etalon temperature in C
+HH; operating hours; Returns the number of operating hours on the system head
+K; keyswitch; Returns keyswitch {0:"OFF",  1:"ENABLE"}
+L; laser; Returns {0:'OFF', 1:'ON', 2:'FAULT'}
+LBOD; LBO servo level; Returns LBO temperature servo drive level
+LBOH; LBO header status; Returns the status of the LBO heater {0:'OFF', 1:'ON'}
+LBOOS; LBO optimization status; Returns the if the system is able to run LBO optimization status {1:True, 0:False}
+LBOST; LBO set temperature; Returns LBO set temperature in C
+LBOSS; LBO servo status; Returns the status of the LBO temperature servo   {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT", 4:"OPTIMIZING"}
+LBOT; LBO temperature; Returns the measured LOB temperature in C
+P; power; Returns the calibrated output power in watts
+LRS; light loop servo; Returns the status of the light loop servo {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT"}
+M; operation mode; Returns the mode of operation, whether current or light control {1:"light", 0:"current"}
+PSH; power supply operating hours; Returns the number of power supply operating hours
+SP; set power; Returns the light regulation set power in watts
+S; shutter; Returns the status of the external shutter {0:"CLOSED", 1:"OPEN"}
+SV; version number; Returns the power supply software version number
+VST; vanadate set temperature; Returns vanadate set temperature in C
+VT; vanadate temperature; Returns the measured vanadate temperature in C
+VD; vanadate servo level; Returns vanadate temperature servo drive level
+VSS; vanadate status; Returns the status of the vanadate temperature servo  {0:"OPEN", 1:"LOCKED", 2:"SEEKING", 3:"FAULT"}
