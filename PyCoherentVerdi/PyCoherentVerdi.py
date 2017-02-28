@@ -109,10 +109,10 @@ class VerdiCommand(object):
     def stop_diode_optimization(self):
         self.write_cmd('DIOPT', '0')
 
-    def start_lbo_optimization(self):
+    def start_LBO_optimization(self):
         self.write_cmd('LBOOPT', '1')
         
-    def stop_lbo_optimization(self):
+    def stop_LBO_optimization(self):
         self.write_cmd('LBOOPT', '0')
 
 class VerdiDriver(VerdiCommand, VerdiQueryClass,BaseDriver):
