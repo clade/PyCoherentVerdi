@@ -14,21 +14,23 @@ This package can be used to drive a Verdi laser using RS232
 Installation
 ============
 
-You need to connect the verdi laser to the computer using a RS232 port or a USB to RS232 converter
-Identify the serial port on which the chiller is connecter ('COM..' on windows, '/dev/...' on linux)
-You need to have the pyserial package installed
+- You need to connect the verdi laser to the computer using a RS232 port or a USB to RS232 converter. 
+- Identify the serial port on which the laser is connected ('COM..' on windows, '/dev/...' on linux).
+- You need to have the pyserial package installed.
 
 Usage
 =====
 
-from PyCoherentVerdi import VerdiDriver
-verdi = VerdiDriver(port='COM7')
-print verdi.power # print the measured power
-print verdi.set_power # print the set power
-verdi.set_power = 15.6 # set the power to 15.6 watts 
+::
 
-verdi.list_cmd(['power', 'baseplate_temperature']) # Returns a dictionary with the values of the parameters in the list
-verdi.read_all_parameters() # Returns a dictionary with the values of all the parameters
+    from PyCoherentVerdi import VerdiDriver
+    verdi = VerdiDriver(port='COM7')
+    print verdi.power # print the measured power
+    print verdi.set_power # print the set power
+    verdi.set_power = 15.6 # set the power to 15.6 watts
+
+    verdi.read_list_cmd(['power', 'baseplate_temperature']) # Returns a dictionary with the values of the parameters in the list
+    verdi.read_all_parameters() # Returns a dictionary with the values of all the parameters
 
 Contact
 =======
@@ -60,7 +62,7 @@ This software can be used under one of the following two licenses: \
 (2) Any other license, as long as it is obtained from the original \
 author.''',
 
-      description='Interface to Tektronix Scope',
+      description='Interface to the Verdi laser',
       long_description = long_description,  
       keywords=['Coherent','Verdi'],
       classifiers=[
