@@ -65,13 +65,15 @@ class VerdiCommand(object):
     def shutter(self):
         """Returns or set the status of the external shutter {0:"CLOSED", 1:"OPEN"}"""
         return super(VerdiCommand, self).shutter
+
     @shutter.setter
     def shutter(self, value):
         if value==True: value=1
         if value==False: value=0
         if isinstance(value, str):
             if value.lower()=='open': value=1
-            if value.upper()=='close': value=0
+            elif value.lower()=='close': value=0
+            else: raise Exception('Value %s is not valid'%value)
         self.write_cmd('S',str(value))
 
     @property
@@ -100,7 +102,19 @@ class VerdiCommand(object):
         """ Put the laser in STANDBY mode (note: If the key is in the "ENABLE" position, then this
         command will override"""
         self.laser = 'OFF'
+
+    def start_diode_optimization(self):
+        self.write_cmd('DIOPT', '1')
         
+    def stop_diode_optimization(self):
+        self.write_cmd('DIOPT', '0')
+
+    def start_lbo_optimization(self):
+        self.write_cmd('LBOOPT', '1')
+        
+    def stop_lbo_optimization(self):
+        self.write_cmd('LBOOPT', '0')
+
 class VerdiDriver(VerdiCommand, VerdiQueryClass,BaseDriver):
     """ Main class for driving the Verdi laser"""
     def read_all_parameters(self):
