@@ -15,18 +15,28 @@ verdi.list_cmd(['power', 'baseplate_temperature']) # Returns a dictionary with t
 verdi.read_all_parameters() # Returns a dictionary with the values of all the parameters
 """
 
-import serial
+
 from VerdiQuery import VerdiQueryClass, VerdiQueryList
 
 DEFAULT_PORT='COM7'
 
-class BaseDriver(serial.Serial):
-    def __init__(self, port=DEFAULT_PORT, baudrate=19200, parity='N', stopbits=1 ):
-        super(BaseDriver, self).__init__(port=port, baudrate=baudrate, parity=parity)
+class BaseDriver(object):
+    def __init__(self, port=DEFAULT_PORT, baudrate=19200, parity='N', stopbits=1, conn=None):
+        if conn is None:
+            import serial
+            conn = serial.Serial(port=port, baudrate=baudrate, parity=parity)
+        self._conn = conn
         
+    def write(self, val):
+        return self._conn.write(val)
+
+    def readline(self):
+        return self._conn.readline()
+
     def write_cmd(self, cmd, value):
         self.write('%s:%s\r\n'%(cmd, value))
         self.readline()
+
     def read_txt(self, cmd):
         """ Return the result of the command ?cmd """
         self.write('?%s\r\n'%cmd)
@@ -34,8 +44,8 @@ class BaseDriver(serial.Serial):
         if a=='': a=self.readline().strip()
         if 'Error' in a:
             raise Exception(a)
-        if a[:6]=="VERDI>":
-            a = a[6:]
+        if '>' in a:
+            _, a = a.split('>', 1)
         if '?%s'%cmd in a: a=a.replace('?%s'%cmd,'')
         return a
     
@@ -115,7 +125,7 @@ class VerdiCommand(object):
     def stop_LBO_optimization(self):
         self.write_cmd('LBOOPT', '0')
 
-class VerdiDriver(VerdiCommand, VerdiQueryClass,BaseDriver):
+class VerdiDriver(VerdiCommand, VerdiQueryClass, BaseDriver):
     """ Main class for driving the Verdi laser"""
     def read_all_parameters(self):
         """Returns a dictionary with all the parameters"""
