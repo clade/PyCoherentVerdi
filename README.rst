@@ -33,6 +33,6 @@ Version history
 Main changes:
 
 * 0.2 Initial relase
-* 0.3-gbar Add support for other interface
+* 0.3 Add support for other interface
 
 
